@@ -1,16 +1,18 @@
 import React from 'react';
 import "./Cart.css";
 
-const Cart = ({ cart }) => {
-    // console.log(cart);
+const Cart = ({ cart, resetHandler, chooseHandler, choose }) => {
     return (
         <div className='cart'>
             <h3 className='order-text'>Selected Product: {cart.length}</h3>
             {
                 cart.map(cart => <p className='cart-name'>{cart.name}</p>)
             }
-            <button className='reset-btn'>Reset</button>
-            <button className='choose-btn'>Choose for one</button>
+            <button className='reset-btn' onClick={resetHandler}>Reset</button>
+            <button className='choose-btn' onClick={() => chooseHandler(cart.length)}>Choose for one</button>
+            {
+                choose === 0 ? <p></p> : <p>{cart[choose - 1].name}</p>
+            }
         </div>
     );
 };

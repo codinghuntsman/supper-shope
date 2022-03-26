@@ -10,11 +10,18 @@ const Shope = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
-
+    const [choose, setChoose] = useState(0)
     const [cart, setCart] = useState([])
     const handleAddToCart = (product) => {
         const newCart = [...cart, product]
         setCart(newCart);
+    }
+    const resetHandler = () => {
+        setCart([]);
+    }
+    const chooseHandler = (length) => {
+        const newValue = Math.floor(Math.random() * length) + 1;
+        setChoose(newValue);
     }
     return (
         <div className='shope-container'>
@@ -24,9 +31,7 @@ const Shope = () => {
                 }
             </div >
             <div className="cart-container">
-
-                <Cart cart={cart} key={cart.id} ></Cart>
-
+                <Cart key={cart.id} cart={cart} resetHandler={resetHandler} chooseHandler={chooseHandler} choose={choose}></Cart>
             </div>
         </div >
     );
