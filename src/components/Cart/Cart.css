@@ -40,6 +40,13 @@
     border-radius: 2px 50px 50px 2px;
     background-color: #ffffff;
 }
+.choose-name{
+    width: 97%;
+    padding: 3px;
+    border: none;
+    border-radius: 2px 50px 50px 2px;
+    background-color: #ffffff;
+}
 @media only screen and (max-width: 600px) {
     .cart-container{
         width: 100%;

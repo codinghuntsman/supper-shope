@@ -6,12 +6,12 @@ const Cart = ({ cart, resetHandler, chooseHandler, choose }) => {
         <div className='cart'>
             <h3 className='order-text'>Selected Product: {cart.length}</h3>
             {
-                cart.map(cart => <p className='cart-name'>{cart.name}</p>)
+                cart.map(cart => <h5 className='cart-name'>{cart.name}</h5>)
             }
             <button className='reset-btn' onClick={resetHandler}>Reset</button>
             <button className='choose-btn' onClick={() => chooseHandler(cart.length)}>Choose for one</button>
             {
-                choose.map(choose => <p className='choose-name'>{cart[choose - 1].name}</p>)
+                choose === 0 ? <p></p> : <h4 className='choose-name'>{cart[choose - 1].name}</h4>
             }
         </div>
     );

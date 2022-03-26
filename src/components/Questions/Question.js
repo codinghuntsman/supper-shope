@@ -3,7 +3,7 @@ import "./Question.css";
 
 const Question = () => {
     return (
-        <div>
+        <div className='question-section'>
             <h2 className='headline'>Question and answer section</h2>
             <div className='question-part'>
                 <h2>How react works?</h2>
