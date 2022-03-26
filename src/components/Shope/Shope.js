@@ -10,7 +10,7 @@ const Shope = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
-    const [choose, setChoose] = useState(0)
+    const [choose, setChoose] = useState([])
     const [cart, setCart] = useState([])
     const handleAddToCart = (product) => {
         const newCart = [...cart, product]

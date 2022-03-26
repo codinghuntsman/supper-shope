@@ -11,7 +11,7 @@ const Cart = ({ cart, resetHandler, chooseHandler, choose }) => {
             <button className='reset-btn' onClick={resetHandler}>Reset</button>
             <button className='choose-btn' onClick={() => chooseHandler(cart.length)}>Choose for one</button>
             {
-                choose === 0 ? <p></p> : <p>{cart[choose - 1].name}</p>
+                choose.map(choose => <p className='choose-name'>{cart[choose - 1].name}</p>)
             }
         </div>
     );
